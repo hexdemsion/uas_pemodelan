@@ -2,8 +2,8 @@
 Tugas konversi algoritma bilangan acak &amp; monte-carlo ke dalam program
 
 ## Link
-Random Number Generator
-https://hexdemsion.github.io/uas_pemodelan/rng
+Bentuk program dari setiap soal dapat diakses pada URL Github Pages dibawah
 
-Monte-Carlo Solver
-https://hexdemsion.github.io/uas_pemodelan/montecarlo
+Random Number Generator: https://hexdemsion.github.io/uas_pemodelan/rng
+
+Monte-Carlo Solver: https://hexdemsion.github.io/uas_pemodelan/montecarlo
