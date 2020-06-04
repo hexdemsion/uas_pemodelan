@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+</head>
+<body>
+
+<h1>Random Number Generator</h1>
+<p>Praktikum Pemodelan & Simulasi Sistem</p>
+
+<select name="metode" required>
+	<option value="">-- pilih metode --</option>
+	<option value="1">Linear Congruential</option>
+	<option value="2">Multiplicative</option>
+</select>
+<br><br>
+<input type="text" name="nil_a" placeholder="variabel a" required value="4"> <br>
+<input type="text" name="nil_c" placeholder="variabel c" required value="7"> <br>
+<input type="text" name="nil_m" placeholder="variabel m" required value="15"> <br>
+<input type="text" name="nil_z0" placeholder="variabel Z0" required value="3"> <br><br>
+<input type="text" name="nil_n" placeholder="Berapa kali" required value="10"> <br> <br>
+
+<button onclick="bangkitkan()">Hitung</button>
+
+<hr>
+
+<textarea id="hasil" cols="50" rows="10"></textarea>
+
+<script>
+function bangkitkan() {
+	var e = document.getElementsByName("metode")[0]
+	var metode_pilihan = e.options[e.selectedIndex].value
+
+	if (metode_pilihan == 1) {
+		hitung_lcg()
+	}else if (metode_pilihan == 2) {
+		hitung_mul()
+	}else{
+		alert("Pilih metode")
+	}
+}
+
+function hitung_lcg() {
+	document.querySelector("#hasil").innerHTML = ""
+
+	var nil_a = parseFloat(document.getElementsByName("nil_a")[0].value)
+	var nil_c = parseFloat(document.getElementsByName("nil_c")[0].value)
+	var nil_m = parseFloat(document.getElementsByName("nil_m")[0].value)
+	var nil_z0 = parseFloat(document.getElementsByName("nil_z0")[0].value)
+	var nil_n = parseFloat(document.getElementsByName("nil_n")[0].value)
+
+	var rand = []
+	var zi = []
+	zi[0] = nil_z0
+	var ui = []
+
+	for (var i = 1; i <= nil_n; i++) {
+		rand[i] = (nil_a * zi[i-1]) + nil_c
+		zi[i] = rand[i] % nil_m
+		ui[i] = zi[i] / nil_m
+
+		console.log(i+".", rand[i], zi[i], ui[i])
+		var baris = i+". "+rand[i]+" | "+zi[i]+" | "+ui[i]+'\n'
+		document.querySelector("#hasil").innerHTML += baris
+	}
+}
+
+function hitung_mul() {
+	document.querySelector("#hasil").innerHTML = ""
+
+	var nil_a = parseFloat(document.getElementsByName("nil_a")[0].value)
+	var nil_m = parseFloat(document.getElementsByName("nil_m")[0].value)
+	var nil_z0 = parseFloat(document.getElementsByName("nil_z0")[0].value)
+	var nil_n = parseFloat(document.getElementsByName("nil_n")[0].value)
+
+	var rand = []
+	var zi = []
+	zi[0] = nil_z0
+	var ui = []
+
+	for (var i = 1; i <= nil_n; i++) {
+		rand[i] = (nil_a * zi[i-1])
+		zi[i] = rand[i] % nil_m
+		ui[i] = zi[i] / nil_m
+
+		console.log(i+".", rand[i], zi[i], ui[i])
+		var baris = i+". "+rand[i]+" | "+zi[i]+" | "+ui[i]+'\n'
+		document.querySelector("#hasil").innerHTML += baris
+	}
+}
+
+</script>
+
+</body>
+</html>
