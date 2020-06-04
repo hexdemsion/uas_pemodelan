@@ -1,7 +1,7 @@
-# uas_pemodelan
+# Tugas Besar Praktikum Pemodelan
 Tugas konversi algoritma bilangan acak &amp; monte-carlo ke dalam program
 
-## link
+## Link
 Random Number Generator
 https://hexdemsion.github.io/uas_pemodelan/rng
 
