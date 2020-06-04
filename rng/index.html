@@ -7,6 +7,7 @@
 
 <h1>Random Number Generator</h1>
 <p>Praktikum Pemodelan & Simulasi Sistem</p>
+<hr>
 
 <select name="metode" required>
 	<option value="">-- pilih metode --</option>
@@ -14,15 +15,13 @@
 	<option value="2">Multiplicative</option>
 </select>
 <br><br>
-<input type="text" name="nil_a" placeholder="variabel a" required value="4"> <br>
-<input type="text" name="nil_c" placeholder="variabel c" required value="7"> <br>
-<input type="text" name="nil_m" placeholder="variabel m" required value="15"> <br>
-<input type="text" name="nil_z0" placeholder="variabel Z0" required value="3"> <br><br>
-<input type="text" name="nil_n" placeholder="Berapa kali" required value="10"> <br> <br>
+<p><span>Variabel a: </span><input type="text" name="nil_a" style="width: 29px" value="4"></p>
+<p><span>Variabel c: </span><input type="text" name="nil_c" style="width: 29px" value="7"></p>
+<p><span>Variabel m: </span><input type="text" name="nil_m" style="width: 29px" value="15"></p>
+<p><span>Variabel Z0: </span><input type="text" name="nil_z0" style="width: 29px" value="3"> </p>
+<p><span>Berapa kali: </span><input type="text" name="nil_n" style="width: 29px" value="10"></p>
 
-<button onclick="bangkitkan()">Hitung</button>
-
-<hr>
+<p><button onclick="bangkitkan()">Hitung</button></p>
 
 <textarea id="hasil" cols="50" rows="10"></textarea>
 
